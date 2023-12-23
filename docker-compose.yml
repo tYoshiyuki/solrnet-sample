@@ -1,0 +1,16 @@
+version: '3'
+services:
+  solr:
+    image: solr
+    ports:
+     - "8983:8983"
+    volumes:
+      - data:/var/solr
+    command:
+      - solr-precreate
+      - gettingstarted
+volumes:
+  data:
+
+# note: 起動後、下記コマンドを実施することで、サンプルデータを投入する
+# post -c gettingstarted example/exampledocs/manufacturers.xml
